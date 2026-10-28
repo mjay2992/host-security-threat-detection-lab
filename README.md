@@ -27,8 +27,8 @@ By capturing raw traffic on the target interface using **Wireshark**, I observed
 2. Because the host firewall was inactive, the operating system instantly replied with a flood of red `[RST, ACK]` packets for closed ports.
 3. For open services (such as SSH Port 22), the attacker received a `[SYN, ACK]` but instantly tore down the session with an abrupt `[RST]` packet before a full 3-way handshake completed, successfully avoiding application-layer logs.
 
-![Nmap Baseline Scan](screenshots/Nmap_Port_Scan_Before_Firewall_Implementation.png)
-![Wireshark Baseline Scan Damage](screenshots/Wireshark_Inbound_Traffic_Before_Firewall_Implementation.png)
+![Wireshark Inbound Traffic Before Firewall](Wireshark_Inbound_Traffic_Before_Firewall_Implementation.png)
+![Nmap Port Scan Before Firewall](Nmap_Port_Scan_Before_Firewall_Implementation.png)
 
 ---
 
@@ -48,8 +48,8 @@ Re-scanning the target showed a drastic shift in network posture:
 *   **The Attacker's Perspective:** Previously open and closed port designations disappeared. The port state altered directly to **`filtered`**, indicating that packets were dropping silently into a void.
 *   **The Wire Perspective:** In Wireshark, the sea of red `[RST, ACK]` response packets dropped to zero. 
 
-![Kali Nmap Filtered Output](screenshots/Nmap_Port_Scan_After_Firewall_Implementation.png)
-![Wireshark Traffic](screenshots/Wireshark_Inbound_Traffic_After_Firewall_Implementation.png)
+![Wireshark Inbound Traffic After Firewall](Wireshark_Inbound_Traffic_After_Firewall_Implementation.png)
+![Nmap Port Scan After Firewall](Nmap_Port_Scan_After_Firewall_Implementation.png)
 
 ---
 
@@ -61,7 +61,7 @@ To ensure a stable testing pipeline free of external internet CDN redirections, 
 
 By capturing the network stream on Ubuntu and using Wireshark's session analysis tools to **Follow the HTTP Stream**, the encryption blind spot was bypassed entirely. The conversation revealed the full HTTP request headers, the deployment tools, and the raw custom administrative credential text string standing completely uncovered on the wire.
 
-![Wireshark Intercepted Payload](screenshots/Payload_Output.png)
+![Payload Output](Payload_Output.png)
 
 ---
 
