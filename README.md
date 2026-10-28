@@ -27,7 +27,6 @@ By capturing raw traffic on the target interface using **Wireshark**, I observed
 2. Because the host firewall was inactive, the operating system instantly replied with a flood of red `[RST, ACK]` packets for closed ports.
 3. For open services (such as SSH Port 22), the attacker received a `[SYN, ACK]` but instantly tore down the session with an abrupt `[RST]` packet before a full 3-way handshake completed, successfully avoiding application-layer logs.
 
-![Nmap Port Scan Before Firewall](Screenshots/Nmap_Port_Scan_Before_Firewall_Implementation.png)
 ![Wireshark Inbound Traffic Before Firewall](Screenshots/Wireshark_Inbound_Traffic_Before_Firewall_Implementation.png)
 ![Nmap Port Scan Before Firewall](Screenshots/Nmap_Port_Scan_Before_Firewall_Implementation.png)
 
