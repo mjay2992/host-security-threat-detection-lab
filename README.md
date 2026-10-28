@@ -49,7 +49,7 @@ Re-scanning the target showed a drastic shift in network posture:
 *   **The Wire Perspective:** In Wireshark, the sea of red `[RST, ACK]` response packets dropped to zero. 
 
 ![Wireshark Inbound Traffic After Firewall](Wireshark_Inbound_Traffic_After_Firewall_Implementation.png)
-![Nmap Port Scan After Firewall](Nmap_Port_Scan_After_Firewall_Implementation.png)
+![Nmap Port Scan After Firewall](Screenshots/Nmap_Port_Scan_After_Firewall_Implementation.png)
 
 ---
 
